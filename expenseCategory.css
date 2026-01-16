@@ -1,60 +1,61 @@
-h1 {
-  text-align: center;
-  font-size: 30px;
-  padding: 2%;
-}
+@media (max-width: 768px) { 
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    padding: 2%;
+  }
 
-h2 {
-  text-align: center;
-}
+  h2 {
+    text-align: center;
+  }
 
-.navbar {
-  width: 94%;
-}
+  .navbar {
+    width: 94%;
+  }
 
-.title {
-  text-align: center;
-  margin: 20px;
-  color: black;
-  font-size: 30px;
-}
-.container {
-  justify-content: center;
-  display: flex;
-  height: 70vh;
-  align-items: center;
-  gap: 3em;
-  flex-grow: 1;
-  padding: 0 40px;
-  margin-bottom: 4%;
-}
+  .title {
+    text-align: center;
+    margin: 20px;
+    color: black;
+    font-size: 30px;
+  }
+  .container {
+    justify-content: center;
+    display: flex;
+    height: 70vh;
+    align-items: center;
+    gap: 3em;
+    flex-grow: 1;
+    padding: 0 40px;
+    margin-bottom: 4%;
+  }
 
-.div1, .div2, .div3 {
-  width: 21em;
-  min-height: 25em;
-  box-shadow: 5px 5px 25px #0000005f;
-  padding: 10px 30px;
-  border-radius: 10px;
-}
+  .div1, .div2, .div3 {
+    width: 21em;
+    min-height: 25em;
+    box-shadow: 5px 5px 25px #0000005f;
+    padding: 10px 30px;
+    border-radius: 10px;
+  }
 
-li {
-  list-style-type: none;
-}
+  li {
+    list-style-type: none;
+  }
 
-#food {
- background-color: rgba(226, 82, 66, 0.753);
-}
-#transpo {
-  background-color: rgba(116, 26, 96, 0.322);
-}
-#savings {
-  background-color: rgba(246, 250, 3, 0.466);
-}
-#expenses {
-  background-color: rgba(212, 106, 7, 0.466);
-}
+  #food {
+  background-color: rgba(226, 82, 66, 0.753);
+  }
+  #transpo {
+    background-color: rgba(116, 26, 96, 0.322);
+  }
+  #savings {
+    background-color: rgba(246, 250, 3, 0.466);
+  }
+  #expenses {
+    background-color: rgba(212, 106, 7, 0.466);
+  }
 
-.savings-summary {
+  .savings-summary {
     width: 60%;
     margin: 30px auto;
     margin-bottom: 70px;
@@ -63,15 +64,16 @@ li {
     background-color: #f5ffb3;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
+  }
 
-.savings-summary h3 {
+  .savings-summary h3 {
     font-size: 25px;
     margin-bottom: 10px;
-}
+  }
 
-.savings-amount {
+  .savings-amount {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 15px;
+  }
 }
