@@ -74,9 +74,13 @@ class BudgetTracker {
                             <span>${transaction.description}</span>
                         </div>
                     <span class="transaction-amount-container">
-                        ₱${Math.abs(transaction.amount).toFixed(2)}
+                        ${transaction.amount < 0
+                            ? `(₱${Math.abs(transaction.amount).toFixed(2)})`
+                            : `₱${transaction.amount.toFixed(2)}`
+                        }
                         <button class="delete-btn" data-id="${transaction.id}">Delete</button>
                     </span>
+
                 `;
                 this.transactionList.appendChild(transactionDiv);
             });

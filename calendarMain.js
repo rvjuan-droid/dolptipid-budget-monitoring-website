@@ -33,7 +33,13 @@ function updateCalendar() {
             month === new Date().getMonth() &&
             year === new Date().getFullYear();
 
-        datesHTML += `<div class="date ${isToday ? "active" : ""}">${day}</div>`;
+        const fullDate = `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+
+        datesHTML += `
+            <div class="date ${isToday ? "active" : ""}" data-date="${fullDate}">
+                ${day}
+            </div>`;
+
     }
 
     const totalCells = startDay + lastDayOfMonth.getDate();
@@ -57,3 +63,51 @@ nextBtn.addEventListener("click", () => {
 });
 
 updateCalendar();
+
+datesElement.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("date") ||
+        e.target.classList.contains("inactive")) return;
+
+    document.querySelectorAll(".date").forEach(d =>
+        d.classList.remove("active")
+    );
+    e.target.classList.add("active");
+
+    const selectedDate = new Date(e.target.dataset.date);
+    calculateWeeklySummary(selectedDate);
+});
+
+function calculateWeeklySummary(selectedDate) {
+    const transactions =
+        JSON.parse(localStorage.getItem("transactions")) || [];
+
+    const start = new Date(selectedDate);
+    const day = start.getDay() || 7;
+    start.setDate(start.getDate() - (day - 1));
+
+    const end = new Date(start);
+    end.setDate(start.getDate() + 6);
+
+    let totalExpenses = 0;
+    let totalSavings = 0;
+
+    transactions.forEach(t => {
+        const tDate = new Date(t.date);
+        if (tDate >= start && tDate <= end) {
+            if (t.type === "savings") {
+                totalSavings += t.amount;
+            } else if (t.amount < 0) {
+                totalExpenses += Math.abs(t.amount);
+            }
+        }
+    });
+
+    document.getElementById("weeklyExpenses").textContent =
+        totalExpenses.toFixed(2);
+
+    document.getElementById("weeklySavings").textContent =
+        totalSavings.toFixed(2);
+
+    document.getElementById("weekRange").textContent =
+        `${start.toLocaleDateString()} – ${end.toLocaleDateString()}`;
+}

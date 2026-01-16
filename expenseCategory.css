@@ -29,11 +29,11 @@ h2 {
   margin-bottom: 4%;
 }
 
-.div1, .div2, .div3, .div4 {
-  width: 25em;
+.div1, .div2, .div3 {
+  width: 21em;
   min-height: 25em;
   box-shadow: 5px 5px 25px #0000005f;
-  padding: 5px 30px;
+  padding: 10px 30px;
   border-radius: 10px;
 }
 
@@ -52,4 +52,26 @@ li {
 }
 #expenses {
   background-color: rgba(212, 106, 7, 0.466);
+}
+
+.savings-summary {
+    width: 60%;
+    margin: 30px auto;
+    margin-bottom: 70px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f5ffb3;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.savings-summary h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.savings-amount {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }

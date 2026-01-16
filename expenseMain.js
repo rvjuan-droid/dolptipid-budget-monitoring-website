@@ -4,9 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryLists = {
         food: document.querySelector('#food ul'),
         transportation: document.querySelector('#transpo ul'),
-        savings: document.querySelector('#savings ul'),
         expenses: document.querySelector('#expenses ul') 
     };
+    const totalSavings = transactions
+    .filter(t => t.type === 'savings')
+    .reduce((sum, t) => sum + t.amount, 0);
+
+    document.getElementById("totalSavings").textContent = totalSavings.toFixed(2);
+
 
     Object.values(categoryLists).forEach(ul => {
         if (ul) ul.innerHTML = '';
@@ -25,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAllowance = transactions
         .filter(t => t.type === 'allowance')
         .reduce((sum, t) => sum + t.amount, 0);
+    
+        document.getElementById("allowanceAmount").textContent =
+    totalAllowance.toFixed(2);
     
     const allowanceDisplay = document.querySelector('h1 u');
     if (allowanceDisplay) {
