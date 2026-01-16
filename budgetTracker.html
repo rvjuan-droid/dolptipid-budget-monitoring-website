@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Budget Tracker </title>
+        <link rel="stylesheet" href="budgetStyle.css" type="text/css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="navbar">
+        <div class="logo">DOLPTIPID</div>
+        <nav>
+           <a href="homepage.html">Home</a>
+            <a href="budgetTracker.html">Budget Tracker</a>
+            <a href="expenseCategory.html">Categorization</a>
+            <a href="illustration.html">Illustration</a>
+            <a href="calendar.html">Calendar</a>
+        </nav>
+        </header>
+        <h2 class="budget-title" style="margin-top: 150px;"> Budget Tracker </h2>
+        <div class="app-container"> 
+            <div class="input-container">
+                <div class="header"> 
+                    <h1> 🐬Dolptipid Budget Tracker</h1>
+                </div>
+
+                <div id="balance"> Balance: ₱0.00 </div>
+
+                <form id="transactionForm">
+                    <input type="text" id="date" placeholder="Date" required>
+                    <input type="text" id="description" placeholder="Description" required>
+                    <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+                    <select id="type" required> 
+                        <option value="allowance"> Allowance</option>
+                        <option value="food"> Expenses: Food</option>
+                        <option value="transportation"> Expenses: Transportation</option> 
+                        <option value="savings"> Savings</option> 
+                        <option value="expenses"> Other Expenses</option> 
+                    </select>
+                    <button type="submit"> Add Transaction </button>
+                </form>
+            </div>
+            <div class="transactions-container">
+                <h2> Transactions </h2>
+                <div id="transactionList">
+                    <div class="transaction allowance">
+                        <span>Food</span>
+                        <span class="transaction-amount-container">₱65.00 <button class="delete-btn"> Delete </button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer style="text-align: center;">
+            <h3> Saving Tips</h3>
+            <ul class="saving-tips">
+                <li>Track your spending weekly so you can see where your money goes.</li>
+                <li>Pay yourself first by automatically saving a portion of your income.</li>
+                <li>Set a weekly spending limit to control impulsive purchases.</li>
+                <li>Build an emergency fund of at least 3–6 months of expenses.</li>
+                <li>Use the 24-hour rule to avoid unnecessary wants.</li>
+            </ul>
+            &copy All rights reserved.
+        </footer>
+        <script src="budgetMain.js"> </script>
+    </body>
+</html>
