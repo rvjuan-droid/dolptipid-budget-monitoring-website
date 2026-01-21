@@ -92,6 +92,9 @@ footer {
     }
 
     body {
-        padding-top: 20rem; 
+        padding-top: 200px; 
+    }
+    .catchy {
+        margin-top: 20rem;
     }
 }
